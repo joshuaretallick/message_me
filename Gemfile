@@ -7,7 +7,6 @@ ruby '2.7.0'
 gem 'rails', '~> 6.1', '>= 6.1.3'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
-gem 'pg'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -39,6 +38,13 @@ gem 'redis'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
